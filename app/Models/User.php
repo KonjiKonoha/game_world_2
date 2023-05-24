@@ -24,6 +24,7 @@ class User extends Authenticatable implements BannableContract
         'name',
         'email',
         'password',
+        'money',
     ];
 
     /**
