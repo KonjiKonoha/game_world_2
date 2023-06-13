@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use SolutionForest\FilamentAccessManagement\Concerns\FilamentUser;
 use Cog\Contracts\Ban\Bannable as BannableContract;
 use Cog\Laravel\Ban\Traits\Bannable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable implements BannableContract
 {
@@ -46,4 +47,12 @@ class User extends Authenticatable implements BannableContract
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Get the deposits for the user's money.
+     */
+    public function deposits(): HasMany
+    {
+        return $this->hasMany(Deposit::class);
+    }
 }
