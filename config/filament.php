@@ -12,6 +12,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use SolutionForest\FilamentAccessManagement\Resources\UserResource;
 
 return [
 
@@ -140,6 +141,7 @@ return [
         'path' => app_path('Filament/Widgets'),
         'register' => [
             Widgets\AccountWidget::class,
+            Widgets\StatsOverviewWidget::class,
             //Widgets\FilamentInfoWidget::class,
         ],
     ],

@@ -83,16 +83,26 @@ class DepositResource extends Resource
                         );
                     }
                 )->sortable(),
+
                 TextColumn::make('user.name')
+                    ->searchable()
                     ->sortable(),
+
                 TextColumn::make('amount')
+                    ->searchable()
+                    ->money('mmk', true)
                     ->sortable(),
+
                 TextColumn::make('payment_method')
+                    ->searchable()
                     ->sortable(),
+
                 ImageColumn::make('proof')
                     ->size(180)
                     ->square(),
+
                 TextColumn::make('created_at')
+                    ->searchable()
                     ->since()
                     ->sortable(),
             ])
